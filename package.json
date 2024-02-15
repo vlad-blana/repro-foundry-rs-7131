@@ -1,0 +1,18 @@
+{
+  "name": "repro-foundry-rs-7131",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "ethers": "^6.11.1",
+    "ora": "^8.0.1"
+  },
+  "type": "module"
+}
