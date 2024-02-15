@@ -75,7 +75,7 @@ const startAnvilAndEstablishWebSocketRpcConnections = async (
 // **** CONFIG ****
 
 const commonArgs = [
-  config.rpcUrl,
+  config.forkRpcUrl,
   config.startPort,
   config.count,
   {
