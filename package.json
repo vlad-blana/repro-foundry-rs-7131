@@ -12,6 +12,7 @@
   "dependencies": {
     "chalk": "^5.3.0",
     "ethers": "^6.11.1",
+    "lodash-es": "^4.17.21",
     "ora": "^8.0.1"
   },
   "type": "module"

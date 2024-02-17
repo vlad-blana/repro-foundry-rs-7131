@@ -59,4 +59,27 @@ I use 400 accounts in my live code so I kept that in this demo too.
 
 ### 2. eth_call 10x slower demo
 
-#### TODO
+#### Description
+
+It starts a single anvil process\
+Establishes a websocket connection with the anvil node\
+Calls the official uniswap v2 factory allPairsLength just to know how many pairs there are - that the code works more or less.\
+Then uses the official multicall3 contract to get the addresses of the first 1000 pairs.\
+
+#### Info
+
+On local node you have to get for larger pairsCount to observe the time difference.\
+Forking public nodes requires lower values if you don't want to grow old before it ends, because of the network latency.\
+This demo should also work on ethereum rpcs - the contracts are the same.\
+
+#### Run
+
+`node slowerMultipleEthCalls.js`
+
+#### My results testing this code
+
+Reading 10000 pairs addresses forking my local geth node takes 4000 ms with the older anvil.exe, and 22000 ms with the newer anvil.exe\
+Reading 1000 pairs addresses forking the g4mm4 erigon node takes 790 ms with the older anvil.exe, and 38022 ms with the newer anvil.exe
+
+The performance regression is visible when calling multiple eth_call at the same time\
+Calling just 1 doesn't show the issue. It might even run better on the newer exe

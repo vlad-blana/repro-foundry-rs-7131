@@ -57,6 +57,7 @@ const startAnvilAndEstablishWebSocketRpcConnections = async (
           provider.websocket.on('error', () => setTimeout(init, 1));
         } catch (err) {
           console.log(err);
+          setTimeout(init, 1);
         }
       }
 
@@ -91,13 +92,13 @@ const commonArgs = [
 // **** ACTUAL WORK ****
 
 await startAnvilAndEstablishWebSocketRpcConnections(
-  'Startup with older anvil <= 2 Jan 2024',
+  'Multiple anvil instances web socket demo - with older anvil <= 2 Jan 2024',
   OLD_ANVIL_EXE_FILE_PATH,
   ...commonArgs
 )
 
 await startAnvilAndEstablishWebSocketRpcConnections(
-  'Startup with newer anvil >= 14 Jan 2024',
+  'Multiple anvil instances web socket demo - with newer anvil >= 14 Jan 2024',
   LATEST_ANVIL_EXE_FILE_PATH,
   ...commonArgs
 )
